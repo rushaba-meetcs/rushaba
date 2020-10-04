@@ -271,7 +271,9 @@
 </div>
 
 <div  id="cmtResult" style="display: none;">
-
+<div style="padding: 10px;" class="col-xs-12 col-sm-12 progress-containe text-success">
+   <h2 id='cmttext'></h2>
+    </div>
   <div class="col-xs-12 col-sm-12 progress-container">
     <div class="col-xs-12 col-sm-12 progress-containe text-warning">
       TOXICITY
@@ -781,7 +783,8 @@
         width: dflt + "%"
       }, 2500);
       $("#perflt").text(dflt + "%");
-
+      $("#cmttext").text('"'+text+'"');
+      
       $('#thxCanvas').css('display', 'none');
       $('#cmtResult').css('display', 'block');
     }
