@@ -277,7 +277,6 @@
   <div class="col-xs-12 col-sm-12 progress-container">
     <div class="col-xs-12 col-sm-12 progress-containe text-warning">
       TOXICITY
-
     </div>
     <div id="pertox" class="col-xs-12 col-sm-12 progress-container">
 
@@ -758,7 +757,7 @@
   })
   $("#cmtBtn").click(function()
   {
-    var text = $('textarea#comment').val();
+    var text = $('textarea#comment').val().replace(/'/g, ' ').replace(/"/g, ' ');
     $.ajax({
     type: 'POST',
     url: 'home/comment',
