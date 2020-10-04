@@ -24,7 +24,6 @@
   })
   $("#li").click(function()
   {
-
     window.location.href="https://www.linkedin.com/in/rushab-ambre-5bb634149/";
   })
 </script>

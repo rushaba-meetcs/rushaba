@@ -230,7 +230,7 @@
     </form>
  
   </div>
-  <div style="display: block;"> <p><strong>Note!</strong> Please do check output.There is not data capturing 
+  <div style="display: block;"> <p><strong>Note!</strong> Please do check output.There is no data capturing 
  </p><p style="font-size: 30px;">&#128512;</p>
   </div> 
   <div style="display: none;" id="chl">
