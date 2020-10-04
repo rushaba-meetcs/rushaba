@@ -24,4 +24,32 @@ class Home extends CI_Controller {
 		$this->load->view('home');
 		$this->load->view('footer');
 	}
+
+	public function comment()
+	{
+		$dataval=$this->input->post('comment');
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, 'https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=AIzaSyC74P-0AusPYq_DKvzfhT6ZaacRhhk1UYk');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, "{comment: {text: '".$dataval."'},languages: ['en'],requestedAttributes: {TOXICITY:{},INSULT:{},FLIRTATION:{}} }");
+		
+		$headers = array();
+		$headers[] = 'Content-Type: application/json';
+		$headers[] = 'Accept: application/json';
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		
+		$res = curl_exec($ch);
+		if (curl_errno($ch)) {
+			echo 'Error:' . curl_error($ch);
+		}
+		curl_close($ch);
+		$dt=$res;
+
+		print_r($dt);
+		exit();
+		
+	}
 }
